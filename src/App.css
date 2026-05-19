@@ -1,0 +1,114 @@
+#root,
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  align-items: stretch;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+}
+
+#navbar.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #eef4f8;
+  padding-block: 13.5px;
+  padding-inline: 9px;
+  border: 1px solid transparent;
+  border-width: 0 0 1px;
+  border-color: #eef4f8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
+}
+
+.fixed-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  background-color: #eef4f8;
+  border: 1px solid transparent;
+  border-width: 1px 0 0 0;
+  border-color: #eef4f8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
+}
+
+.buttonStyle {
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgray;
+  transition: ease background-color 250ms;
+  background-color: #0170ef;
+  color: white;
+  margin-top: 15px;
+}
+.p-PaymentAccordionButtonIconContainer {
+  visibility: none !important;
+}
+
+.product-name-text {
+  font-size: 16px;
+  color: #0170ef;
+  text-align: center;
+}
+.hand-cleaner-dispensers-text {
+  font-size: 14px;
+  color: #0170ef;
+  text-align: start;
+}
+input,
+textarea {
+  outline-color: #0170ef !important;
+  border-color: transparent !important;
+}
+
+/* input[type="date"]::placeholder {
+  color: aqua !important;
+} */
+
+input:focus,
+textarea:focus {
+  outline-color: #0170ef !important;
+  box-shadow: 0 0 0 1px #0170ef !important;
+}
+
+.upload-icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-weight: 400;
+  text-align: center;
+  margin-right: 0.5rem;
+  border-color: #0170ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cross-icon-upload:hover {
+}
