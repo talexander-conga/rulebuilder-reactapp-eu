@@ -13,7 +13,7 @@ export const GenerateAndSign = async (agreementId,authToken) => {
       headers: {
         accept: "application/json",
         Authorization: authToken,
-        "User-Id": window.currentOrgConfig.user_id,
+        "User-Id": window.currentOrgConfig?.user_id, // Added optional chaining
         "Content-Type":"application/json"
       },
     });
