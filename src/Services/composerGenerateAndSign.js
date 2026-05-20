@@ -13,17 +13,21 @@ export const composerGenerateAndSign = async (agreementId,authToken) => {
       headers: {
         accept: "application/json",
         Authorization: authToken,
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        "User-Id": window.currentOrgConfig?.user_id,
       },
     });
  
     console.log("Signing Url:", response.data?.Data);
     return response.data?.Data;
   } catch (err) {
-    console.error("Error calling Signing Url API:", err.response?.data || err.message);
-    if (err.response?.status === 500) {
-      console.error("Backend Stack Trace/Message:", err.response.data);
+    const serverError = err.response?.data;
+    console.error("Error calling Signing Url API:", serverError || err.message);
+    
+    if (serverError?.Errors) {
+      serverError.Errors.forEach((e, i) => console.error(`Server Error [${i}]:`, e));
     }
+
     throw err;
   }
 };
