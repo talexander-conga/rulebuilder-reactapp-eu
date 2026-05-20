@@ -1,0 +1,2007 @@
+{
+    "name": "list",
+    "version": "1.0.0",
+    "customStyleClass": null,
+    "section": {
+        "label": "",
+        "rowHeight": "inherit",
+        "height": "inherit",
+        "width": "inherit",
+        "layout": "column",
+        "customStyleClass": null,
+        "hideTitle": true,
+        "components": [],
+        "sections": [
+            {
+                "layout": "row",
+                "columns": 1,
+                "components": [
+                    {
+                        "type": "actionBar",
+                        "id": "agreement_detail_controlbar_actionbar",
+                        "entityType": "Agreement",
+                        "forceCheckUserPermissions": true,
+                        "layout": "column",
+                        "maxActions": 25,
+                        "actions": [
+                            {
+                                "name": "GENERATE",
+                                "id": "agreement_document_generate_btn",
+                                "key": "agreement_document_generate_btn",
+                                "label": "Generate Document",
+                                "translationKeys": {
+                                    "label": "GENERATE_DOCUMENT_ACTION"
+                                },
+                                "actionFunc": "document::ongenerate"
+                            },
+                            {
+                                "actionFunc": "document::onActivateContract",
+                                "id": "agreement_activate_contract",
+                                "key": "agreement_activate_contract",
+                                "label": "Activate",
+                                "translationKeys": {
+                                    "label": "ACTIVATE_CONTRACT"
+                                },
+                                "name": "ACTIVATE"
+                            },
+                            {
+                                "name": "REVIEW",
+                                "id": "agreement_document_send_for_review_btn",
+                                "key": "agreement_document_send_for_review_btn",
+                                "variant": [
+                                    "md",
+                                    "filled",
+                                    "primary"
+                                ],
+                                "label": "Send For Review",
+                                "translationKeys": {
+                                    "label": "SEND_FOR_REVIEW"
+                                },
+                                "actionFunc": "document::onSendForReview"
+                            },
+                            {
+                                "name": "SEND_FOR_SIGNATURE",
+                                "id": "agreement_document_send_for_sign_btn",
+                                "key": "agreement_document_send_for_sign_btn",
+                                "label": "Send For Signature",
+                                "translationKeys": {
+                                    "label": "SEND_FOR_SIGNATURE"
+                                },
+                                "actionFunc": "document::onSendForSignature"
+                            },
+                            {
+                                "name": "SEND_FOR_SIGNATURE",
+                                "id": "agreement_document_upload_for_wet_sign_btn",
+                                "key": "agreement_document_upload_for_wet_sign_btn",
+                                "label": "Upload Signed Document",
+                                "translationKeys": {
+                                    "label": "UPLOAD_SIGNED_DOCUMENT"
+                                },
+                                "actionFunc": "document::onUploadSignedDocument"
+                            },
+                            {
+                                "actionFunc": "document::onUpdateContractUpload",
+                                "id": "agreement_regenerate_document_btn",
+                                "key": "agreement_regenerate_document_btn",
+                                "variant": [
+                                    "md",
+                                    "outline",
+                                    "primary"
+                                ],
+                                "label": "Regenerate Document",
+                                "translationKeys": {
+                                    "label": "REGENERATE_DOCUMENT_ACTION"
+                                },
+                                "name": "REGENERATE"
+                            },
+                            {
+                                "name": "IMPORTOFFLINE",
+                                "id": "agreement_import_offline_btn",
+                                "key": "agreement_import_offline_btn",
+                                "label": "Import Offline Document",
+                                "translationKeys": {
+                                    "label": "IMPORT_OFFLINE_DOCUMENT"
+                                },
+                                "actionFunc": "document::onUpload"
+                            },
+                            {
+                                "actionFunc": "document::onPreviewDocument",
+                                "id": "preview_document",
+                                "key": "preview_document",
+                                "label": "Preview",
+                                "translationKeys": {
+                                    "label": "PREVIEW"
+                                },
+                                "name": "PREVIEW"
+                            },
+                            {
+                                "name": "GENERATE_SUPPORTING_DOCUMENT",
+                                "id": "agreement_supporting_document_btn",
+                                "variant": [
+                                    "md",
+                                    "outline",
+                                    "primary"
+                                ],
+                                "key": "agreement_supporting_document_btn",
+                                "label": "Generate Supporting Document",
+                                "translationKeys": {
+                                    "label": "SUPPORTING_DOCUMENT_ACTION"
+                                },
+                                "actionFunc": "document::onClickSupportingDocument"
+                            },
+                            {
+                                "name": "INTELLIGENT_DOCUMENT_IMPORT",
+                                "id": "intelligent_document_import_btn",
+                                "variant": [
+                                    "md",
+                                    "outline",
+                                    "primary"
+                                ],
+                                "key": "intelligent_document_import_btn",
+                                "label": "Intelligent Document Import",
+                                "translationKeys": {
+                                    "label": "INTELLIGENT_DOCUMENT_UPLOAD"
+                                },
+                                "actionFunc": "document::handleCCIImportDocument"
+                            },
+                            {
+                                "actionFunc": "document::onJoinDocuments",
+                                "id": "agreement_join_documents",
+                                "key": "agreement_join_documents",
+                                "variant": [
+                                    "md",
+                                    "outline",
+                                    "primary"
+                                ],
+                                "label": "Join Documents",
+                                "translationKeys": {
+                                    "label": "SELECT_DOCUMENT_PAGE_HEADER_LABEL"
+                                },
+                                "name": "JOIN"
+                            },
+                            {
+                                "name": "CANCEL",
+                                "id": "agreement_document_cancel_btn",
+                                "key": "agreement_document_cancel_btn",
+                                "label": "Cancel",
+                                "translationKeys": {
+                                    "label": "CLMADMIN_CANCEL"
+                                },
+                                "actionFunc": "document::onCancelContract"
+                            },
+                            {
+                                "name": "SUBMITREQUEST",
+                                "id": "agreement_submit_request_btn",
+                                "key": "agreement_submit_request_btn",
+                                "label": "Submit Request",
+                                "translationKeys": {
+                                    "label": "SUBMIT_REQUEST"
+                                },
+                                "actionFunc": "contract::onSubmitRequest"
+                            },
+                            {
+                                "name": "AMEND",
+                                "id": "agreement_amend_contract",
+                                "key": "agreement_amend_contract",
+                                "label": "Amend",
+                                "translationKeys": {
+                                    "label": "AMEND"
+                                },
+                                "actionFunc": "document::onAmendContract"
+                            },
+                            {
+                                "name": "RENEW",
+                                "id": "agreement_renew_contract",
+                                "key": "agreement_renew_contract",
+                                "label": "Renew",
+                                "translationKeys": {
+                                    "label": "RENEW"
+                                },
+                                "actionFunc": "document::onRenewContract"
+                            },
+                            {
+                                "name": "EXPIRE",
+                                "id": "agreement_expire_contract",
+                                "key": "agreement_expire_contract",
+                                "label": "Expire",
+                                "translationKeys": {
+                                    "label": "EXPIRE"
+                                },
+                                "actionFunc": "document::onExpireContract"
+                            },
+                            {
+                                "name": "TERMINATE",
+                                "id": "agreement_terminate_contract",
+                                "key": "agreement_terminate_contract",
+                                "label": "Terminate",
+                                "translationKeys": {
+                                    "label": "TERMINATE"
+                                },
+                                "actionFunc": "document::onTerminateContract"
+                            },
+                            {
+                                "name": "INTELLIGENT_OPEN_DOCUMENT",
+                                "id": "intelligent_open_document_btn",
+                                "key": "intelligent_open_document_btn",
+                                "label": "Go to Discovery Agent",
+                                "translationKeys": {
+                                    "label": "CLM_UI_GO_TO_DISCOVERY_AGENT"
+                                },
+                                "actionFunc": "document::handleCCIDocumentList"
+                            },
+                            {
+                                "name": "SEND_FOR_SIGNATURE",
+                                "id": "agreement_document_upload_for_recall_sign_btn",
+                                "key": "agreement_document_upload_for_recall_sign_btn",
+                                "label": "Recall Signature Request",
+                                "translationKeys": {
+                                    "label": "RECALL_SIGNATURE"
+                                },
+                                "actionFunc": "document::onRecallSignature"
+                            },
+                            {
+                                "name": "SEND_FOR_SIGNATURE",
+                                "id": "agreement_cancel_sign_action_button",
+                                "key": "agreement_cancel_sign_action_button",
+                                "label": "Cancel Signature Request",
+                                "translationKeys": {
+                                    "label": "CANCEL_SIGNATURE"
+                                },
+                                "actionFunc": "document::onCancelSignature"
+                            },
+                            {
+                                "actionFunc": "approvals:previewAndSubmit",
+                                "id": "agreement_pending_approval_action_button",
+                                "key": "agreement_pending_approval_action_button",
+                                "label": "Preview & Submit",
+                                "translationKeys": {
+                                    "label": "PREVIEW_AND_SUBMIT"
+                                },
+                                "name": "PREVIEW_&_SUBMIT"
+                            },
+                            {
+                                "actionFunc": "approvals:myApprovals",
+                                "id": "agreement_my_approval_action_button",
+                                "key": "agreement_my_approval_action_button",
+                                "label": "My Approvals",
+                                "translationKeys": {
+                                    "label": "MY_APPROVALS"
+                                },
+                                "name": "MY_APPROVALS"
+                            },
+                            {
+                                "id": "agreement_contract_dynamics_integration_btn",
+                                "label": "Sync Line Items from Opportunity",
+                                "actionFunc": "document::onContractDynamicsIntegration"
+                            },
+                            {
+                                    "id": "SignComposerDocument",
+                                    "key": "SignComposerDocument",
+                                    "label": "Sign Composer Document",
+                                    "actionFunc": "navigate",
+                                    "customAction": {
+                                        "displayName": "Sign Composer Document",
+                                        "name": "navigate",
+                                        "actionDef": "async function(e){var t;const r=null===(t=e.CCL)||void 0===t?void 0:t.customCodeService,{resourceName:n,method:i,url:a}=e.params,o={resourceName:n,method:i,requestParam:{...e.context,userInfo:e.userInfo,orgInfo:e.orgInfo},url:a};let s;try{s=await(null==r?void 0:r.executeUri(o))}catch(e){return Promise.reject(e)}return s||{Data:{respAction:[],data:{}}}}",
+                                        "source": "ccl",
+                                        "params": "url:https://white-beach-0a31c9503.7.azurestaticapps.net/Generateandsign/{recordId}"
+                                    },
+                                    "hidden": false,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "SignComposerDocumentInternal",
+                                    "key": "SignComposerDocumentInternal",
+                                    "label": "Sign Composer Document Internal",
+                                    "actionFunc": "navigate",
+                                    "customAction": {
+                                        "displayName": "Sign Composer Document Internal",
+                                        "name": "navigate",
+                                        "actionDef": "async function(e){var t;const r=null===(t=e.CCL)||void 0===t?void 0:t.customCodeService,{resourceName:n,method:i,url:a}=e.params,o={resourceName:n,method:i,requestParam:{...e.context,userInfo:e.userInfo,orgInfo:e.orgInfo},url:a};let s;try{s=await(null==r?void 0:r.executeUri(o))}catch(e){return Promise.reject(e)}return s||{Data:{respAction:[],data:{}}}}",
+                                        "source": "ccl",
+                                        "params": "url:https://white-beach-0a31c9503.7.azurestaticapps.net/GenerateandsignInternal/{recordId}"
+                                    },
+                                    "hidden": false,
+                                    "selected": false
+                                }
+                            
+                        ],
+                        "uiRules": {
+                            "ruleSet": [
+                                {
+                                    "id": "hide send for review signature buttons",
+                                    "name": "Hide Send For Review Signature Buttons",
+                                    "description": "Hide Send For Review Signature Buttons",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Ready for Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Signature Declined",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 1 AND 3 ) OR ( 4 AND 5 ) OR ( 4 AND 6 ) OR ( 4 AND 7 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_send_for_review_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_document_send_for_sign_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_send_for_review_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_document_send_for_sign_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "hide-generate-button",
+                                    "name": "Hide generate document button",
+                                    "description": "Hide generate document button",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Amendment",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Renewal",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Submitted Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Progress",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 1 AND 3 ) OR ( 1 AND 4 ) OR ( 1 AND 5 ) OR ( 1 AND 6 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_generate_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_generate_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-submit-request-button",
+                                    "name": "Hide submit request button",
+                                    "description": "Hide submit request button",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_submit_request_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_submit_request_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-import-offline-cancel-button",
+                                    "name": "Hide Import Offline Cancel Button",
+                                    "description": "Hide Import Offline Cancel Button",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Submitted Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Amendment",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Renewal",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Ready for Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Signature Declined",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 1 AND 3 ) OR ( 1 AND 4 ) OR ( 1 AND 5 ) OR ( 6 AND 7 ) OR ( 6 AND 8 ) OR ( 9 AND 10 ) OR ( 9 AND 11 ) OR ( 9 AND 12 ) OR ( 9 AND 13 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_import_offline_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_document_cancel_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_import_offline_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_document_cancel_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-supporting-document",
+                                    "name": "Hide Supporting Document",
+                                    "description": "Hide Supporting Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Submitted Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Amendment",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Renewal",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Ready for Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Effect",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Filing",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Activated",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 1 AND 3 ) OR ( 1 AND 4 ) OR ( 1 AND 5 ) OR ( 6 AND 7 ) OR ( 6 AND 8 ) OR ( 9 AND 10 ) OR ( 9 AND 11 ) OR ( 9 AND 12 ) OR ( 13 AND 15 ) OR ( 14 AND 15 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_supporting_document_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_supporting_document_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-amend-renew-expire-terminate-button",
+                                    "name": "Hide amend renew expire terminate button",
+                                    "description": "Hide amend renew expire terminate button",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Effect",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Activated",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Filing",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 2 AND 3 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_amend_contract",
+                                                "property": "hidden",
+                                                "value": true
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_renew_contract",
+                                                "property": "hidden",
+                                                "value": true
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_expire_contract",
+                                                "property": "hidden",
+                                                "value": true
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_terminate_contract",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_amend_contract",
+                                                "property": "hidden",
+                                                "value": false
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_renew_contract",
+                                                "property": "hidden",
+                                                "value": false
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_expire_contract",
+                                                "property": "hidden",
+                                                "value": false
+                                            },
+                                            {
+                                                "dependentComponentId": "agreement_terminate_contract",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-go-to-AI-discovery-document",
+                                    "name": "Hide Go To AI Discovery Document",
+                                    "description": "Hide Go To AI Discovery Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Import",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "intelligent_open_document_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "intelligent_open_document_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-upload-signed-document",
+                                    "name": "Hide Upload Signed Document",
+                                    "description": "Hide Upload Signed Document",
+                                    "ruleType": "customAction",
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "Sign_Process_c",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "CongaSign",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": false,
+                                                "criteriaFieldSchemaName": "Sign_Process_c",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_upload_for_wet_sign_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_upload_for_wet_sign_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": "ui-rule-hide-intelligent-document-import",
+                                    "name": "Hide Intelligent Document Import",
+                                    "description": "Hide Intelligent Document Import",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Amendment",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Renewal",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Submitted Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Progress",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 3 AND 4 ) OR ( 3 AND 5 ) OR ( 1 AND 6 ) OR ( 1 AND 7 ) OR ( 1 AND 8 ) OR ( 1 AND 9 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "intelligent_document_import_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "intelligent_document_import_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-regenerate-document",
+                                    "name": "Hide Regenerate Document",
+                                    "description": "Hide Regenerate Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Ready for Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 1 AND 3 ) OR ( 4 AND 5 ) OR ( 4 AND 6 ) OR ( 4 AND 7 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_regenerate_document_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_regenerate_document_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-preview-document",
+                                    "name": "Hide Preview Document",
+                                    "description": "Hide Preview Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "preview_document",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "preview_document",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-activate-button",
+                                    "name": "Hide Activate Button",
+                                    "description": "Hide Activate Button",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_activate_contract",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_activate_contract",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-join-document",
+                                    "name": "Hide Join Document",
+                                    "description": "Hide Join Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Authoring",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Author Contract",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Ready for Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Fully Signed",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Signature Declined",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Progress",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Submitted Request",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Amendment",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Renewal",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Language Approval",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Internal Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Import",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Review",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 ) OR ( 3 AND 1 ) OR ( 4 AND 5 ) OR ( 4 AND 6 ) OR ( 4 AND 7 ) OR ( 4 AND 8 ) OR ( 9 AND 10 ) OR ( 9 AND 11 ) OR ( 9 AND 12 ) OR ( 13 AND 9 ) OR ( 14 AND 9 ) OR ( 1 AND 15 ) OR ( 1 AND 13 ) OR ( 4 AND 16 ) OR ( 17 AND 18 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_join_documents",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_join_documents",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-recall-signature-document",
+                                    "name": "Hide Recall Signature Document",
+                                    "description": "Hide Recall Signature Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_upload_for_recall_sign_btn",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_document_upload_for_recall_sign_btn",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-cancel-signature-document",
+                                    "name": "Hide Cancel Signature Document",
+                                    "description": "Hide Cancel Signature Document",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "StatusCategory",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "In Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "StatusCategory",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Other Party Signatures",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 AND 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_cancel_sign_action_button",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_cancel_sign_action_button",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-preview-and-submit",
+                                    "name": "Hide Preview And Submit",
+                                    "description": "Hide Preview And Submit",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "Approval Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Pending Approval",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Approval Status",
+                                                "type": "Field"
+                                            },
+                                            {
+                                                "componentId": "Approval Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Approved",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Approval Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 OR 2 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_pending_approval_action_button",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_pending_approval_action_button",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                },
+                                {
+                                    "id": "ui-rule-hide-my-approvals",
+                                    "name": "Hide My Approvals",
+                                    "description": "Hide My Approvals",
+                                    "condition": {
+                                        "criteria": [
+                                            {
+                                                "componentId": "Approval Status",
+                                                "componentProperty": "value",
+                                                "validation": {
+                                                    "logicalOperator": "=",
+                                                    "comparisonValue": "Not Submitted",
+                                                    "condition": "ValueMatchesStaticCondition"
+                                                },
+                                                "visible": true,
+                                                "criteriaFieldSchemaName": "Approval Status",
+                                                "type": "Field"
+                                            }
+                                        ],
+                                        "logicalExpression": "( 1 )"
+                                    },
+                                    "action": {
+                                        "invalid": [
+                                            {
+                                                "dependentComponentId": "agreement_my_approval_action_button",
+                                                "property": "hidden",
+                                                "value": false
+                                            }
+                                        ],
+                                        "valid": [
+                                            {
+                                                "dependentComponentId": "agreement_my_approval_action_button",
+                                                "property": "hidden",
+                                                "value": true
+                                            }
+                                        ]
+                                    },
+                                    "enabled": true,
+                                    "evaluateImmediately": true,
+                                    "ruleType": "customAction"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "id": "section-177927393278977735101989127"
+            }
+        ],
+        "id": "section-177927393278952979485092958"
+    },
+    "uiRules": [
+        "clm::agreement::::detailcontrolbar::config_rule1"
+    ],
+    "header": {}
+}
