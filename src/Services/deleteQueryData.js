@@ -1,8 +1,9 @@
 import axios from "axios";
+import { base_url } from "./baseUrl";
 
 export const deleteQueryTerm = async (authToken, id) => {
   try {
-    const url = `https://prod-rls10.congacloud.com/api/data/v1/objects/QueryTerms_c/${id}`;
+    const url = `${base_url}/api/data/v1/objects/QueryTerms_c/${id}`;
 
     const response = await axios.delete(url, {
       headers: {

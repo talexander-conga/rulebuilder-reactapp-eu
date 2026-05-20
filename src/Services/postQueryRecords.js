@@ -1,4 +1,5 @@
 import axios from "axios";
+import { base_url } from "./baseUrl";
 
 export const createQueryTerm = async (authToken, body) => {
   try {
@@ -11,7 +12,7 @@ export const createQueryTerm = async (authToken, body) => {
     // };
 
     const response = await axios.post(
-      "https://prod-rls10.congacloud.com/api/data/v1/objects/QueryTerms_c",
+      `${base_url}/api/data/v1/objects/QueryTerms_c`,
       body,
       {
         headers: {

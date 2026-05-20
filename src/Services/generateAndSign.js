@@ -1,8 +1,8 @@
 import axios from "axios";
+import { base_url } from "./baseUrl";
  
 export const GenerateAndSign = async (agreementId,authToken) => {
-  const url =
-    "https://prod-rls10.congacloud.com/api/custom-api/v1/GenerateComposerDoc/generateDocdellwood";
+  const url = `${base_url}/api/custom-api/v1/GenerateComposerDoc/generateDocdellwood`;
  
   const data = {
     "recordId": agreementId,

@@ -9,6 +9,7 @@ import {RxCrossCircled} from "react-icons/rx"
 import {FaCircleCheck} from "react-icons/fa6"
 import {MdCancel} from "react-icons/md"
 import {getToken} from "../Services/authToken"
+import { base_url } from "../Services/baseUrl"
 // import axios from "axios"
 // import { GenerateAndSign } from "../../../Services/generateandsign"
 import { useParams } from "react-router-dom"
@@ -31,7 +32,7 @@ const GenerateSign = () => {
     let signingUrl=await GenerateAndSign(agreementId,accessToken);
     console.log("signing Url",signingUrl);
     // window.open(signingUrl);
-    window.location.href=`https://prod-rls10.congacloud.com/clm/detail/${agreementId}`;
+    window.location.href=`${base_url}/clm/detail/${agreementId}`;
   }
  
   return (

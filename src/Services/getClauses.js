@@ -1,8 +1,9 @@
 import axios from "axios";
+import { base_url } from "./baseUrl";
 
 export const getClauses = async (authToken) => {
   try {
-    const url = "https://prod-rls10.congacloud.com/api/data/v1/objects/Template";
+    const url = `${base_url}/api/data/v1/objects/Template`;
 
     const response = await axios.get(url, {
       headers: {
