@@ -20,7 +20,10 @@ export const composerGenerateAndSign = async (agreementId,authToken) => {
     console.log("Signing Url:", response.data?.Data);
     return response.data?.Data;
   } catch (err) {
-    console.error("Error calling Signing Url API", err);
+    console.error("Error calling Signing Url API:", err.response?.data || err.message);
+    if (err.response?.status === 500) {
+      console.error("Backend Stack Trace/Message:", err.response.data);
+    }
     throw err;
   }
 };

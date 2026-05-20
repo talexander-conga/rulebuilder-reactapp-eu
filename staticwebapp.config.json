@@ -1,16 +1,9 @@
 {
-  "routes": [
-    {
-      "route": "/generateandsign/*",
-      "serve": "/index.html"
-    },
-    {
-      "route": "/generateandsignInternal/*",
-      "serve": "/index.html"
-    },
-    {
-      "route": "/*",
-      "serve": "/index.html"
-    }
-  ]
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*.{js,css,png,jpg,gif,svg}", "/api/*"]
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
 }
