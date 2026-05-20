@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/Generateandsign/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/GenerateandsignInternal/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/**",
+      "serve": "/index.html"
+    }
+  ]
+}
