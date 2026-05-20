@@ -1,11 +1,11 @@
 {
   "routes": [
     {
-      "route": "/Generateandsign/*",
+      "route": "/generateandsign/*",
       "serve": "/index.html"
     },
     {
-      "route": "/GenerateandsignInternal/*",
+      "route": "/generateandsignInternal/*",
       "serve": "/index.html"
     },
     {

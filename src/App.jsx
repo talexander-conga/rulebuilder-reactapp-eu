@@ -29,7 +29,7 @@ function App() {
               }
             />
             <Route
-              path="/Generateandsign/:agreementId"
+              path="/generateandsign/:agreementId"
               element={
                 <Suspense fallback={<SuspenseLoader />}>
                   <GenerateSignPalmettoNewOrg />
@@ -37,7 +37,7 @@ function App() {
               }
             />
             <Route
-              path="/GenerateandsignInternal/:agreementId"
+              path="/generateandsignInternal/:agreementId"
               element={
                 <Suspense fallback={<SuspenseLoader />}>
                   <GenerateSignInternal />
