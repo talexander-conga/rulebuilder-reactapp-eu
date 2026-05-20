@@ -1,0 +1,32 @@
+[
+  {
+    "id": "SignComposerDocument",
+    "key": "SignComposerDocument",
+    "label": "Sign Composer Document",
+    "actionFunc": "navigate",
+    "customAction": {
+      "displayName": "Sign Composer Document",
+      "name": "navigate",
+      "actionDef": "async function(e){var t;const r=null===(t=e.CCL)||void 0===t?void 0:t.customCodeService,{resourceName:n,method:i,url:a}=e.params,o={resourceName:n,method:i,requestParam:{...e.context,userInfo:e.userInfo,orgInfo:e.orgInfo},url:a};let s;try{s=await(null==r?void 0:r.executeUri(o))}catch(e){return Promise.reject(e)}return s||{Data:{respAction:[],data:{}}}}",
+      "source": "ccl",
+      "params": "url:https://white-beach-0a31c9503.7.azurestaticapps.net/Generateandsign/{recordId}"
+    },
+    "hidden": false,
+    "selected": false
+  },
+  {
+    "id": "SignComposerDocumentInternal",
+    "key": "SignComposerDocumentInternal",
+    "label": "Sign Composer Document Internal",
+    "actionFunc": "navigate",
+    "customAction": {
+      "displayName": "Sign Composer Document Internal",
+      "name": "navigate",
+      "actionDef": "async function(e){var t;const r=null===(t=e.CCL)||void 0===t?void 0:t.customCodeService,{resourceName:n,method:i,url:a}=e.params,o={resourceName:n,method:i,requestParam:{...e.context,userInfo:e.userInfo,orgInfo:e.orgInfo},url:a};let s;try{s=await(null==r?void 0:r.executeUri(o))}catch(e){return Promise.reject(e)}return s||{Data:{respAction:[],data:{}}}}",
+      "source": "ccl",
+      "params": "url:https://white-beach-0a31c9503.7.azurestaticapps.net/GenerateandsignInternal/{recordId}"
+    },
+    "hidden": false,
+    "selected": false
+  }
+]
