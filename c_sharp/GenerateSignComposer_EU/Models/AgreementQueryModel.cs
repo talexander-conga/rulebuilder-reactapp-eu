@@ -16,8 +16,8 @@ namespace GenerateComposerDocV2
         public string CustomerZipCode_c{get;set;}
 
         public LookupObject RecordOwner{get;set;}
-        public Decimal CNGCU_Min_Earned_Percent_c{get;set;}
-        public Decimal CNGCU_Named_Insured_Count_c{get;set;}
+        public Decimal? CNGCU_Min_Earned_Percent_c{get;set;}
+        public Decimal? CNGCU_Named_Insured_Count_c{get;set;}
         public string CNGCU_Named_Insured_Multiline_c{get;set;}
         public string Installer_Name_c{get;set;}
         public string Installer_Email_c{get;set;}
