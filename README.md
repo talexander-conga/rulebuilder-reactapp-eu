@@ -9,6 +9,8 @@ The project consists of two main components:
 
 ## Architecture Diagram
 
+![Flow Chart](images/Flow.png)
+
 ```mermaid
 graph TD
     subgraph "Client & Configuration (Azure)"
