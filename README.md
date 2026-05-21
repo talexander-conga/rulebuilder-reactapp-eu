@@ -134,3 +134,7 @@ The Rule Builder POC utilizes a hybrid hosting model across Microsoft Azure and 
 
 ### Environment Configuration
 When hosting the frontend in Azure, environment variables (like `VITE_CONGA_CLIENT_ID`) should be configured in the **Configuration** section of the Azure Static Web App in the Azure Portal.
+
+## TODO
+
+- [ ] Support deployment of the React Web App to the Conga Advantage Platform.
