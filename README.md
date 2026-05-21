@@ -4,8 +4,43 @@ The **Rule Builder** is a Proof of Concept (POC) designed to provide a dynamic c
 
 ## Project Structure
 The project consists of two main components:
-1.  **C# Backend:** A processing engine responsible for evaluating rule logic and executing the document generation/signing sequences.
+1.  **C# Backend:** A processing engine responsible for evaluating rule logic and executing the document generation/signing sequences. This component runs on the **Conga Advantage Platform** and is managed via manual deployment.
 2.  **React Web App (UI):** A configuration interface used to build, manage, and store "Query Terms" (the rules).
+
+## Architecture Diagram
+
+```mermaid
+graph TD
+    subgraph "Client & Configuration (Azure)"
+        User([End User])
+        ReactApp[React Web App / Vite]
+    end
+
+    subgraph "Deployment & CI/CD"
+        GHA[GitHub Actions]
+        Manual[Manual Deployment]
+    end
+
+    subgraph "Conga Platform"
+        subgraph "Advantage Platform"
+            CSharpBackend[C# Processing Logic]
+        end
+        SchemaSvc[Schema Service]
+        DataSvc[Data Service - QueryTerms_c]
+        DriveSvc[Drive Service]
+        CustomSvc[Custom APIs]
+    end
+
+    User <--> ReactApp
+    ReactApp -- Metadata Discovery --> SchemaSvc
+    ReactApp -- CRUD Rules --> DataSvc
+    ReactApp -- Trigger Processing --> CSharpBackend
+    CSharpBackend -- Evaluate Logic --> DataSvc
+    CSharpBackend -- Execute Generation --> CustomSvc
+    
+    GHA -- Automated Deploy --> ReactApp
+    Manual -- Manual Deploy --> CSharpBackend
+```
 
 ## Workflow Overview
 1.  **Metadata Discovery:** The React app fetches current Agreement fields via the Conga Schema API.
@@ -82,28 +117,20 @@ VITE_CONGA_AUTH_URL=your_conga_auth_endpoint
 | `CNGCU_Clauses_c` | The name of the clause to include. |
 | `Signer_c` / `Signing_Order_c` | Signing metadata. |
 
-## Hosting in Azure
+## Hosting and Deployment
 
-This POC is optimized for deployment within the Microsoft Azure ecosystem, leveraging managed services for scalability and ease of maintenance.
+The Rule Builder POC utilizes a hybrid hosting model across Microsoft Azure and the Conga Advantage Platform.
 
-### Recommended Architecture
--   **Backend API:** Hosted on **Azure App Service** (Linux or Windows) running the .NET runtime.
--   **Frontend UI:** Hosted as an **Azure Static Web App**, which provides global distribution and integrated SSL.
+### Frontend (Azure)
+- **Hosting:** The React UI is hosted as an **Azure Static Web App**, providing global distribution and integrated SSL.
+- **Deployment Workflow:** Managed via **GitHub Actions**:
+    1.  **Trigger:** A push or pull request to the `main` branch.
+    2.  **Build:** Executes `npm run build` for the React frontend.
+    3.  **Deploy:** Uses the `Azure/static-web-apps-deploy` action to sync the build folder.
 
-### Deployment Workflow
-The deployment is managed via **GitHub Actions** (or Azure DevOps Pipelines):
-1.  **Trigger:** A push or pull request to the `main` branch.
-2.  **Build & Test:**
-    -   Compiles the C# backend project and runs unit tests.
-    -   Executes `npm run build` for the React frontend.
-3.  **Deploy:**
-    -   Uses the `Azure/webapps-deploy` action to publish the C# binary to the App Service.
-    -   Uses the `Azure/static-web-apps-deploy` action to sync the React build folder.
+### Backend (Conga Advantage)
+- **Hosting:** The C# processing engine is hosted directly on the **Conga Advantage Platform**.
+- **Deployment Workflow:** Managed via **Manual Deployment**. Updates to the C# rules processing logic are deployed independently of the frontend automated workflow.
 
 ### Environment Configuration
-When hosting in Azure, environment variables should be configured in the **Configuration > Application Settings** section of the Azure Portal rather than a `.env` file. Ensure `VITE_CONGA_CLIENT_ID`, `VITE_CONGA_CLIENT_SECRET`, and `VITE_BASE_URL` are set as App Settings to be safely injected into the runtime.
-
-## TODO
-
-### Advantage Platform Hosting
-- [ ] Investigate and implement deployment workflows for hosting the POC on the Advantage platform.
+When hosting the frontend in Azure, environment variables (like `VITE_CONGA_CLIENT_ID`) should be configured in the **Configuration** section of the Azure Static Web App in the Azure Portal.
