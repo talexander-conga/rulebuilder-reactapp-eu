@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "d5f2c934-4471-44ce-8061-7ef2ec87a15d",
+    "_postman_id": "d16da8b5-03ff-499d-9ca8-7546f2112f3a",
     "name": "GenerateSignComposerCollection",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "33412471"
+    "_exporter_id": "44725415"
   },
   "item": [
     {
@@ -557,7 +557,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"callbackUrl\": \"https://prod-rls10.congacloud.com/api/custom-api/v1/CongaSignCallback/callback\",\r\n    \"authType\": \"OAUTH2_AUTH\",\r\n    \"oAuthSetting\": {\r\n        \"grantType\": \"CLIENT_CREDENTIALS\",\r\n        \"authorizationServerUrl\": \"{{token_url}}\",\r\n        \"clientId\": \"{{client_id}}\",\r\n        \"clientSecret\": \"{{client_secret}}\",\r\n        \"scope\": \"sign\"\r\n    },\r\n    \"status\":true\r\n}",
+          "raw": "{\r\n    \"callbackUrl\": \"{{base_url}}/api/custom-api/v1/CongaSignCallback/callback\",\r\n    \"authType\": \"OAUTH2_AUTH\",\r\n    \"oAuthSetting\": {\r\n        \"grantType\": \"{{grant_type}}\",\r\n        \"authorizationServerUrl\": \"{{token_url}}\",\r\n        \"clientId\": \"{{client_id}}\",\r\n        \"clientSecret\": \"{{client_secret}}\",\r\n        \"scope\": \"sign\"\r\n    },\r\n    \"status\":true\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -565,12 +565,9 @@
           }
         },
         "url": {
-          "raw": "https://coreapps-rlsprod.congacloud.com/api/sign/callback/v1/register/signcallback",
-          "protocol": "https",
+          "raw": "{{base_url}}/api/sign/callback/v1/register/signcallback",
           "host": [
-            "coreapps-rlsprod",
-            "congacloud",
-            "com"
+            "{{base_url}}"
           ],
           "path": [
             "api",
